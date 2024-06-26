@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes, faCheckCircle, faExclamationCircle, faUser, faCaretDown, faSignOutAlt, faEllipsisV } from '@fortawesome/free-solid-svg-icons';
 import '../../styles/Inasistencias.css';
 
 const Inasistencias = () => {
+  const navigate = useNavigate();
   const [showLogout, setShowLogout] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
 
@@ -18,6 +20,10 @@ const Inasistencias = () => {
 
   const toggleOptionsMenu = () => {
     setShowMenu(!showMenu);
+  };
+
+  const redirectToRegistroInasistencias = () => {
+    navigate('/registro-inasistencias');
   };
 
   return (
@@ -79,7 +85,7 @@ const Inasistencias = () => {
             <FontAwesomeIcon icon={faTimes} className="button-icon" />
             Inasistencias
           </button>
-          <button className="rectangle-button" onClick={() => console.log('Botón 2 clicado')}>
+          <button className="rectangle-button" onClick={redirectToRegistroInasistencias}>
             <FontAwesomeIcon icon={faCheckCircle} className="button-icon" />
             Registro de inasistencias
           </button>
@@ -114,3 +120,4 @@ const Inasistencias = () => {
 };
 
 export default Inasistencias;
+
