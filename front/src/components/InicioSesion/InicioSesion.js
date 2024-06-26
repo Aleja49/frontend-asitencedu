@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom'; // Importar Link desde react-router-dom
+import { Link, useNavigate } from 'react-router-dom'; // Importar Link y useNavigate desde react-router-dom
 import '../../styles/InicioSesion.css'; // Asegúrate de tener los estilos importados correctamente
 
 const InicioSesion = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate(); // Inicializar el hook useNavigate
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
@@ -20,7 +21,8 @@ const InicioSesion = () => {
     event.preventDefault();
     // Aquí puedes manejar la lógica de inicio de sesión, como enviar los datos al backend
     console.log(`Email: ${email}, Password: ${password}`);
-    // También podrías redirigir a la siguiente página, dependiendo de tu lógica de negocio
+    // Redirigir a la página de Inasistencias
+    navigate('/inasistencias'); // Asegúrate de usar la ruta correcta
   };
 
   return (
