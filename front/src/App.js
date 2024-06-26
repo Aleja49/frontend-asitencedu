@@ -16,8 +16,7 @@ const App = () => {
         <Route path="/inasistencias" element={<Inasistencias />} />
         <Route path="/registro-inasistencias" element={<RegistroInasistencias />} />
         <Route path="/reporte-estudiantes" element={<ReporteEstudiantes />} />
-        {/* Agrega la ruta para Perfil */}
-        <Route path="/perfil" element={<Perfil />} />
+        <Route path="/perfil" element={<Perfil />} /> {/* Asegúrate de que la ruta hacia Perfil esté definida */}
       </Routes>
     </Router>
   );

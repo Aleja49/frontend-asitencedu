@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes, faCheckCircle, faExclamationCircle, faUser, faCaretDown, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+import { useNavigate } from 'react-router-dom'; // Importa useNavigate en lugar de useHistory
 import '../../styles/RegistroInasistencias.css';
 
 const RegistroInasistencias = () => {
+  const navigate = useNavigate(); // Usa useNavigate para navegar entre rutas
+
   const [showLogout, setShowLogout] = useState(false);
   const [formData, setFormData] = useState({
     nombreEstudiante: '',
@@ -42,6 +45,18 @@ const RegistroInasistencias = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(formData); // Aquí puedes hacer el envío de los datos o las operaciones necesarias
+  };
+
+  const redirectToInasistencias = () => {
+    navigate('/inasistencias'); // Redirige a la ruta de inasistencias al hacer clic en Ausencias
+  };
+
+  const redirectToReporteEstudiantes = () => {
+    navigate('/reporte-estudiantes'); // Redirige a la ruta de ReporteEstudiantes.js
+  };
+
+  const redirectToPerfil = () => {
+    navigate('/perfil'); // Redirige a la ruta de Perfil.js
   };
 
   return (
@@ -101,19 +116,19 @@ const RegistroInasistencias = () => {
 
       <div className="left-rectangle">
         <div className="rectangle-content">
-          <button className="rectangle-button" onClick={() => console.log('Botón 1 clicado')}>
+          <button className="rectangle-button" onClick={redirectToInasistencias}>
             <FontAwesomeIcon icon={faTimes} className="button-icon" />
-            Ausencias
+            Inasistencias
           </button>
           <button className="rectangle-button" onClick={() => console.log('Botón 2 clicado')}>
             <FontAwesomeIcon icon={faCheckCircle} className="button-icon" />
-            Registro de estudiantes
+            Registro de inasistencias
           </button>
-          <button className="rectangle-button" onClick={() => console.log('Botón 3 clicado')}>
+          <button className="rectangle-button" onClick={redirectToReporteEstudiantes}>
             <FontAwesomeIcon icon={faExclamationCircle} className="button-icon" />
             Reporte estudiantes
           </button>
-          <button className="rectangle-button" onClick={() => console.log('Botón 4 clicado')}>
+          <button className="rectangle-button" onClick={redirectToPerfil}>
             <FontAwesomeIcon icon={faUser} className="button-icon" />
             Perfil
           </button>
