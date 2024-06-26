@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes, faCheckCircle, faExclamationCircle, faUser, faCaretDown, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+import { useNavigate } from 'react-router-dom'; // Importa useNavigate en lugar de useHistory
 import '../../styles/ReporteEstudiantes.css';
 
 const ReporteEstudiantes = () => {
+  const navigate = useNavigate(); // Usa useNavigate para navegar entre rutas
   const [showLogout, setShowLogout] = useState(false);
 
   const toggleLogoutMenu = () => {
@@ -13,6 +15,18 @@ const ReporteEstudiantes = () => {
   const handleLogout = () => {
     console.log('Cerrar sesión');
     setShowLogout(false);
+  };
+
+  const redirectToPerfil = () => {
+    navigate('/perfil'); // Redirige a la ruta de Perfil.js
+  };
+
+  const redirectToRegistroInasistencias = () => {
+    navigate('/registro-inasistencias'); // Redirige a la ruta de RegistroInasistencias.js
+  };
+
+  const redirectToInasistencias = () => {
+    navigate('/inasistencias'); // Redirige a la ruta de Inasistencias.js
   };
 
   return (
@@ -51,19 +65,19 @@ const ReporteEstudiantes = () => {
       
       <div className="left-rectangle">
         <div className="rectangle-content">
-          <button className="rectangle-button" onClick={() => console.log('Botón 1 clicado')}>
+          <button className="rectangle-button" onClick={redirectToInasistencias}>
             <FontAwesomeIcon icon={faTimes} className="button-icon" />
-            Ausencias
+            Inasistencias
           </button>
-          <button className="rectangle-button" onClick={() => console.log('Botón 2 clicado')}>
+          <button className="rectangle-button" onClick={redirectToRegistroInasistencias}>
             <FontAwesomeIcon icon={faCheckCircle} className="button-icon" />
-            Registro de estudiantes
+            Registro de inasistencias
           </button>
           <button className="rectangle-button" onClick={() => console.log('Botón 3 clicado')}>
             <FontAwesomeIcon icon={faExclamationCircle} className="button-icon" />
             Reporte estudiantes
           </button>
-          <button className="rectangle-button" onClick={() => console.log('Botón 4 clicado')}>
+          <button className="rectangle-button" onClick={redirectToPerfil}>
             <FontAwesomeIcon icon={faUser} className="button-icon" />
             Perfil
           </button>
