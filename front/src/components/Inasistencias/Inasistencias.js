@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTimes, faCheckCircle, faExclamationCircle, faUser, faCaretDown, faSignOutAlt, faEllipsisV } from '@fortawesome/free-solid-svg-icons';
+import { faEllipsisV, faTimes, faCheckCircle, faExclamationCircle, faUser, faCaretDown, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import '../../styles/Inasistencias.css';
 
 const Inasistencias = () => {
@@ -37,6 +37,12 @@ const Inasistencias = () => {
   return (
     <div className="inasistencias-container">
       <h2 className="rectangle-title">INASISTENCIA DE ESTUDIANTES</h2>
+
+      {/* Cuadro de búsqueda */}
+      <div className="search-box">
+        <input type="text" placeholder="Buscar por nombre" className="search-input" />
+      </div>
+
       <div className="additional-content">
         <div className="additional-text">
           <p className="large-text">Registros mostrados</p>
@@ -45,8 +51,7 @@ const Inasistencias = () => {
 
         {/* Nuevo contenedor similar al existente */}
         <div className="custom-container">
-          <p className="large-text">Buscar por nombre</p>
-          <span className="gray-box">Nicoll Alejandra Prieto Puentes</span>
+          {/* Contenido eliminado */}
         </div>
 
         {/* Tabla de datos */}
