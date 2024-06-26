@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom'; // Importar Link desde react-router-dom
 import '../../styles/InicioSesion.css'; // Asegúrate de tener los estilos importados correctamente
 
 const InicioSesion = () => {
@@ -56,7 +57,7 @@ const InicioSesion = () => {
         </div>
         <button type="submit">Iniciar sesión</button>
         <p className="register-link">
-          ¿No tienes una cuenta? <a href="/registro">Regístrate aquí</a>
+          ¿No tienes una cuenta? <Link to="/registro">Regístrate aquí</Link> {/* Cambio a Link */}
         </p>
       </form>
     </div>
@@ -64,4 +65,3 @@ const InicioSesion = () => {
 };
 
 export default InicioSesion;
-
