@@ -4,7 +4,8 @@ import InicioSesion from './components/InicioSesion/InicioSesion';
 import Registro from './components/Registro/Registro';
 import Inasistencias from './components/Inasistencias/Inasistencias';
 import RegistroInasistencias from './components/RegistroInasistencias/RegistroInasistencias';
-import ReporteEstudiantes from './components/ReporteEstudiantes/Reporteestudiantes'; // Importa el componente ReporteEstudiantes
+import ReporteEstudiantes from './components/ReporteEstudiantes/Reporteestudiantes'; // Asegúrate de que el nombre de la importación coincida
+import Perfil from './components/Perfil/perfil';
 
 const App = () => {
   return (
@@ -14,7 +15,9 @@ const App = () => {
         <Route path="/registro" element={<Registro />} />
         <Route path="/inasistencias" element={<Inasistencias />} />
         <Route path="/registro-inasistencias" element={<RegistroInasistencias />} />
-        <Route path="/reporte-estudiantes" element={<ReporteEstudiantes />} /> {/* Ruta para ReporteEstudiantes */}
+        <Route path="/reporte-estudiantes" element={<ReporteEstudiantes />} />
+        {/* Agrega la ruta para Perfil */}
+        <Route path="/perfil" element={<Perfil />} />
       </Routes>
     </Router>
   );
