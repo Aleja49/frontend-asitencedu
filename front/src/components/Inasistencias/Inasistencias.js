@@ -26,6 +26,10 @@ const Inasistencias = () => {
     navigate('/registro-inasistencias');
   };
 
+  const redirectToReporteEstudiantes = () => {
+    navigate('/reporte-estudiantes');
+  };
+
   return (
     <div className="inasistencias-container">
       <h2 className="rectangle-title">INASISTENCIA DE ESTUDIANTES</h2>
@@ -89,7 +93,7 @@ const Inasistencias = () => {
             <FontAwesomeIcon icon={faCheckCircle} className="button-icon" />
             Registro de inasistencias
           </button>
-          <button className="rectangle-button" onClick={() => console.log('Botón 3 clicado')}>
+          <button className="rectangle-button" onClick={redirectToReporteEstudiantes}>
             <FontAwesomeIcon icon={faExclamationCircle} className="button-icon" />
             Reporte estudiantes
           </button>
@@ -120,4 +124,3 @@ const Inasistencias = () => {
 };
 
 export default Inasistencias;
-
